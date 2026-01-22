@@ -10,10 +10,10 @@ st.set_page_config(
     page_icon="⚡",
     layout="wide",
 )
-if st.experimental_get_query_params().get("verify") == ["google"]:
-    with open("google05ad866fbf6da644.html", "r") as f:
-        st.components.v1.html(f.read(), height=600)
-    st.stop()
+st.components.v1.html("""
+    <meta name="google-site-verification" content="3OalxEE5eG8HR0bf8gzBbNvh3On5RUsweJteiJpdaTU" />
+""", height=0)
+
 # كود التحقق السحري - يضع الكود في "رأس" الصفحة رغماً عن القيود
 # 3. عنوان الموقع الذي يراه الزوار
 st.markdown("<h1 style='text-align: center; color: white;'>⚡ SOLUTION TOOLS DOWNLOAD VIDEO</h1>", unsafe_allow_html=True)
@@ -213,3 +213,4 @@ GA_JS = """
 """
 
 st.components.v1.html(GA_JS, height=0)
+
