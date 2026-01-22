@@ -10,9 +10,17 @@ st.set_page_config(
     page_icon="⚡",
     layout="wide",
 )
-st.components.v1.html("""
-    <meta name="google-site-verification" content="3OalxEE5eG8HR0bf8gzBbNvh3On5RUsweJteiJpdaTU" />
-""", height=0)
+st.markdown(
+    f"""
+    <script>
+        var meta = document.createElement('meta');
+        meta.name = "google-site-verification";
+        meta.content = "3OalxEE5eG8HR0bf8gzBbNvh3On5RUsweJteiJpdaTU";
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    </script>
+    """,
+    unsafe_allow_html=True
+)
 
 # كود التحقق السحري - يضع الكود في "رأس" الصفحة رغماً عن القيود
 # 3. عنوان الموقع الذي يراه الزوار
@@ -213,4 +221,5 @@ GA_JS = """
 """
 
 st.components.v1.html(GA_JS, height=0)
+
 
