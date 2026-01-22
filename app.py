@@ -2,6 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import requests
 import urllib.parse
+import os
 
 # 1. إعداد الصفحة بنظام Wide لاستغلال الجوانب للألعاب
 st.set_page_config(
@@ -9,7 +10,10 @@ st.set_page_config(
     page_icon="⚡",
     layout="wide",
 )
-
+if st.experimental_get_query_params().get("verify") == ["google"]:
+    with open("google05ad866fbf6da644.html", "r") as f:
+        st.components.v1.html(f.read(), height=600)
+    st.stop()
 # كود التحقق السحري - يضع الكود في "رأس" الصفحة رغماً عن القيود
 # 3. عنوان الموقع الذي يراه الزوار
 st.markdown("<h1 style='text-align: center; color: white;'>⚡ SOLUTION TOOLS DOWNLOAD VIDEO</h1>", unsafe_allow_html=True)
@@ -207,4 +211,5 @@ GA_JS = """
   gtag('config', 'G-3K920TRWE2');
 </script>
 """
+
 st.components.v1.html(GA_JS, height=0)
