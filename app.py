@@ -10,17 +10,14 @@ st.set_page_config(
     page_icon="⚡",
     layout="wide",
 )
-st.markdown(
-    f"""
-    <script>
-        var meta = document.createElement('meta');
-        meta.name = "google-site-verification";
-        meta.content = "3OalxEE5eG8HR0bf8gzBbNvh3On5RUsweJteiJpdaTU";
-        document.getElementsByTagName('head')[0].appendChild(meta);
-    </script>
-    """,
-    unsafe_allow_html=True
-)
+
+# --- 1. كود التحقق من جوجل (الحل النهائي) ---
+# استبدل 'كود_التحقق_هنا' بالكود الخاص بك من Google Search Console
+st.markdown("""
+    <head>
+        <meta name="google-site-verification" content="3OalxEE5eG8HR0bf8gzBbNvh3On5RUsweJteiJpdaTU" />
+    </head>
+""", unsafe_allow_html=True)
 
 # كود التحقق السحري - يضع الكود في "رأس" الصفحة رغماً عن القيود
 # 3. عنوان الموقع الذي يراه الزوار
@@ -221,5 +218,6 @@ GA_JS = """
 """
 
 st.components.v1.html(GA_JS, height=0)
+
 
 
